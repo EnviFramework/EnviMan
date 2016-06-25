@@ -1,0 +1,51 @@
+#!/bin/bash
+
+PREFIX="/usr/bin/"
+VERSION="3.4.8.0"
+TESTVERSION="1.0.4"
+PARSERVERSION="1.2"
+
+install_envi() {
+  mkdir install_src
+	wget https://github.com/EnviMVC/EnviMVC3PHP/archive/v${VERSION}.zip
+  mv v${VERSION} ./install_src/EnviMvc.zip
+  wget https://github.com/EnviMVC/EnviUnitTest/archive/v${TESTVERSION}.zip
+  mv v${TESTVERSION} ./install_src/EnviUnitTest.zip
+  wget https://github.com/EnviMVC/CodeParser/archive/v${PARSERVERSION}.zip
+  mv v${PARSERVERSION} ./install_src/CodeParser.zip
+  wget https://github.com/mustangostang/spyc/archive/0.5.1.zip
+  mv 0.5.1 ./install_src/spyc.zip
+  
+  cd ./install_src
+	unzip EnviMvc.zip
+	mv -f EnviMVC3PHP-${VERSION}/* ../
+  
+	unzip EnviUnitTest.zip
+	mv -f EnviUnitTest-${TESTVERSION}/* ../libs/envi3/util/EnviUnitTest/
+  
+	unzip CodeParser.zip
+	mv -f CodeParser-${PARSERVERSION}/* ../libs/envi3/util/EnviUnitTest/CodeParser/
+  
+	unzip spyc.zip
+	mv -f spyc-0.5.1/* ../libs/envi3/util/EnviUnitTest/spyc/
+  
+  cd ../
+  
+  
+  
+  
+	chmod +x ./envi
+
+}
+
+
+main() {
+	install_envi
+	exit 0
+}
+
+main
+
+
+
+

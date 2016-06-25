@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="author" content="envi php">
+  <title>envi php{{ page.title }}</title>
+
+  <link rel="stylesheet" type="text/css" href="/vendor/botstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css"  href="/css/enviphp.css">
+  <link rel="stylesheet" type="text/css"  href="/css/carousel.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="//img.nagato.asia/cdn/nyanpass/css/font-awesome-ie7.min.css">
+  <![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//img.nagato.asia/cdn/nyanpass/css/coming-soon-ie-lt-9.css">
+  <![endif]-->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <style type="text/css">
+  body { padding-top: 80px; }
+  @media ( min-width: 768px ) {
+    #banner {
+      min-height: 300px;
+      border-bottom: none;
+    }
+    .bs-docs-section {
+      margin-top: 8em;
+    }
+    .bs-component {
+      position: relative;
+    }
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {
+      width: 90%;
+    }
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/{{ page.lang }}/">enviphp.net</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="/{{ page.lang }}/">Top</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{page.nav-language_select}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/Ja/index.html">日本語 Page</a></li>
+                        <li><a href="/En/index.html">English Page</a></li>
+                    </ul>
+                </li>
+                <li><a href="/{{ page.lang }}/man/">Docu{{page.nav-document}}</a></li>
+                <li><a href="/{{ page.lang }}/release_note/">{{page.nav-release_note}}</a></li>
+                <li><a href="https://github.com/EnviMVC/EnviMVC3PHP/issues">{{page.nav-create_issue}}</a></li>
+
+            </ul>
+            <form class="navbar-form navbar-right" role="search" action="http://www.enviphp.net/c/man/q">
+                <div class="form-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search" value="">
+                </div>
+                <button type="submit" class="btn btn-default">{{page.nav-search_button}}</button>
+            </form>
+
+        </nav>
+    </div>
+</header>
+
+
+  {{ content }}
+
+<footer class="small">
+  <div class="social-button">
+    <ul>
+      <li><iframe src="https://ghbtns.com/github-btn.html?user=Git-Live&repo=git-live&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe></li>
+      <li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-dnt="true">ツイート</a></li>
+      <li><div class="fb-like" data-href="https://git-live.github.io/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>
+      <li><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center copyright">
+        {{ site.data.common.copyright}}
+      </div>
+    </div>
+  <ul class="footer-links">
+  <li>Currently {{ site.data.common.currently}}</li>
+  <li class="muted">·</li>
+  <li>{{site.page.footer_link_free_msg}}</li>
+
+
+
+</ul>
+
+
+  </div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/vendor/botstrap/js/bootstrap.min.js"></script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
+
+</body>
+</html>

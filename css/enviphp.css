@@ -1,0 +1,52 @@
+body{
+  -webkit-text-size-adjust: 100%;
+}
+man h1, man h2, man h3, man h4{
+  color: #FF8040;
+  font-weight: normal;
+  display: block;
+}
+
+man h1 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin:0 0 .5em;
+    
+}
+man h2 {
+    font-size: 1.25em;
+    line-height: 1.2;
+    margin:0 0 0.6em;
+}
+man h3 {
+    font-size: 1.125em;
+    line-height: 1.333333333;
+    margin:0 0 0.66666666666667em;
+}
+
+.alert-info a {
+    color:#ff0000;
+}
+.type {
+color: #693;
+}
+
+.classname, .parameter {
+color: #369;
+}
+
+strong {
+font-weight: bolder;
+font-style: normal;
+}
+
+strong, em {
+text-rendering: optimizeLegibility;
+}
+
+.prompt{
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+
+}

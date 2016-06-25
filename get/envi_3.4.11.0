@@ -1,0 +1,60 @@
+#!/bin/bash
+
+PREFIX="/usr/bin/"
+VERSION="3.4.11.0"
+TESTVERSION="1.0.8"
+PARSERVERSION="1.2"
+
+install_envi() {
+  mkdir install_src
+  curl https://codeload.github.com/EnviMVC/EnviMVC3PHP/zip/v${VERSION} > EnviMvc.zip
+  mv EnviMvc.zip ./install_src/EnviMvc.zip
+  curl https://codeload.github.com/EnviMVC/EnviUnitTest/zip/v${TESTVERSION} > EnviUnitTest.zip
+  mv EnviUnitTest.zip ./install_src/EnviUnitTest.zip
+  curl https://codeload.github.com/EnviMVC/CodeParser/zip/v${PARSERVERSION} > CodeParser.zip
+  mv CodeParser.zip ./install_src/CodeParser.zip
+  curl https://codeload.github.com/mustangostang/spyc/zip/0.5.1 > spyc.zip
+  mv spyc.zip ./install_src/spyc.zip
+  
+  cd ./install_src
+  
+  
+  unzip EnviMvc.zip
+  mv -f EnviMVC3PHP-${VERSION}/* ../
+  
+  unzip EnviUnitTest.zip
+  mv -f EnviUnitTest-${TESTVERSION}/* ../libs/envi3/util/EnviUnitTest/
+  
+  unzip CodeParser.zip
+  mv -f CodeParser-${PARSERVERSION}/* ../libs/envi3/util/EnviUnitTest/CodeParser/
+  
+  unzip spyc.zip
+  mv -f spyc-0.5.1/* ../libs/envi3/util/EnviUnitTest/spyc/
+  
+  cd ../
+  
+
+  chmod +x ./envi
+
+  if [ `which sudo` ]; then
+    sudo php ./install.php > ./_envi
+    sudo cp ./_envi ${PREFIX}envi
+    sudo chmod 0755 ${PREFIX}envi
+  else
+    php ./install.php > ./_envi
+    cp ./_envi ${PREFIX}envi
+    chmod 0755 ${PREFIX}envi
+  fi
+}
+
+
+main() {
+  install_envi
+  exit 0
+}
+
+main
+
+
+
+

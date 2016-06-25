@@ -1,0 +1,46 @@
+#!/bin/bash
+
+PREFIX="/usr/bin/"
+VERSION="3.3.6"
+TESTVERSION="1.0.1"
+PARSERVERSION="1.0"
+
+install_envi() {
+  mkdir install_src
+	wget https://github.com/EnviMVC/EnviMVC3PHP/archive/v${VERSION}.zip
+  mv v${VERSION} ./install_src/EnviMvc.zip
+  
+  cd ./install_src
+	unzip EnviMvc.zip
+	mv -f EnviMVC3PHP-${VERSION}/* ../
+  
+  
+  cd ../
+  
+  
+  
+  
+	chmod +x ./envi
+
+	if [ `which sudo` ]; then
+		sudo php ./install.php > ./_envi
+		sudo cp ./_envi ${PREFIX}envi
+		sudo chmod 0755 ${PREFIX}envi
+	else
+		php ./install.php > ./_envi
+		cp ./_envi ${PREFIX}envi
+		chmod 0755 ${PREFIX}envi
+	fi
+}
+
+
+main() {
+	install_envi
+	exit 0
+}
+
+main
+
+
+
+
