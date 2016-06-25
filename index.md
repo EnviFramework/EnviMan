@@ -14,7 +14,7 @@ title: TOPページ
 
 install_dir: enviの基幹ファイルをインストールするディレクトリ
 
-easy_to_install :簡単インストールガイド
+easy_to_install: 簡単インストールガイド
 
 carousel:
     item1:
@@ -33,5 +33,5 @@ carousel:
 
 
 ---
-
+aaaa
 <br>
